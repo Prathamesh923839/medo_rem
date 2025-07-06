@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MediTrack</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+  <header class="topbar">
+    <div class="logo">🧪 MediTrack</div>
+    <div class="date-block">
+      <button class="nav-btn">← Previous Day</button>
+      <div class="date-title">
+        <h1>Today, Sunday, July 6</h1>
+        <p>Your Medicines</p>
+      </div>
+      <button class="nav-btn">Next Day →</button>
+    </div>
+  </header>
+
+  <nav class="tabs">
+    <a href="../daily_schedule/daily_schedule.html">Daily Schedule</a>
+    <a  href="../my_medicine/my_medicine.html">My Medicines</a>
+    <a class="active" >History</a>
+
+  </nav>
+
+  <main class="main-content">
+        <section class="schedule-grid">
+      <div class="time-block ">
+        <h2>TAKEN</h2>
+        <div class="med-card left-border green">
+          <div>
+            <h3>Lisinopril</h3>
+            <p>10mg - 1 tablet<br>8:00 AM - With breakfast</p>
+          </div>
+          <span class="status green-label">Taken</span>
+        </div>
+        
+      </div>
+
+      <div class="time-block ">
+        <h2>MISSED</h2>
+        <div class="med-card left-border red">
+          <div>
+            <h3>Metoprolol</h3>
+            <p>25mg - 1 tablet<br>5:00 PM - Before dinner</p>
+          </div>
+          <span class="status red-label">Missed</span>
+        </div>
+
+  </main>
+
+  <footer>
+    <p>© 2025 MediTrack - Your Daily Medicine Tracker</p>
+    <div class="footer-links">
+      <a href="#">Help</a>
+      <a href="#">Privacy Policy</a>
+      <a href="#">Contact Support</a>
+    </div>
+  </footer>
+</body>
+</html>

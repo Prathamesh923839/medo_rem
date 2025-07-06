@@ -110,6 +110,7 @@ header.topbar {
 .green { border-color: #34c38f; }
 .red { border-color: #f06548; }
 .orange { border-color: #f6c23e; }
+
 .blue { border-color: #2c4df7; }
 
 .btn {
@@ -120,6 +121,7 @@ header.topbar {
   font-weight: bold;
   cursor: pointer;
 }
+
 
 .green-label, .btn.green { background: #34c38f; }
 .red-label, .btn.red { background: #f06548; }
@@ -133,17 +135,16 @@ header.topbar {
   font-weight: bold;
 }
 
+
 .refill {
   margin-top: 2rem;
   background-color: white;
   padding: 20px;
   border-radius: 10px;
 }
-
 .refill h2 {
   margin-bottom: 1rem;
 }
-
 .refill-card {
   display: flex;
   justify-content: space-between;
@@ -154,7 +155,6 @@ header.topbar {
   margin-bottom: 1rem;
   border-radius: 8px;
 }
-
 .refill-card.red {
   background: #fdecea;
   border-left-color: #e74c3c;

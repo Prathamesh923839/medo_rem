@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MediTrack</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+  <header class="topbar">
+    <div class="logo">🧪 MediTrack</div>
+    <div class="date-block">
+      <button class="nav-btn">← Previous Day</button>
+      <div class="date-title">
+        <h1>Today, Sunday, July 6</h1>
+        <p>Your Medicine Schedule</p>
+      </div>
+      <button class="nav-btn">Next Day →</button>
+    </div>
+  </header>
+
+  <nav class="tabs">
+    <a class="active" >Daily Schedule</a>
+    <a href="../my_medicine/my_medicine.html">My Medicines</a>
+    <a href="../history/history.html">History</a>
+  
+  </nav>
+
+  <main class="main-content">
+    <section class="schedule-grid">
+      <div class="time-block morning">
+        <h2>🌞 Morning</h2>
+        <div class="med-card left-border green">
+          <div>
+            <h3>Lisinopril</h3>
+            <p>10mg - 1 tablet<br>8:00 AM - With breakfast</p>
+          </div>
+          <span class="status green-label">Taken</span>
+        </div>
+        <div class="med-card left-border blue">
+          <div>
+            <h3>Metformin</h3>
+            <p>500mg - 1 tablet<br>9:30 AM - With breakfast</p>
+          </div>
+          <button class="btn green">Take Now</button>
+        </div>
+      </div>
+
+      <div class="time-block afternoon">
+        <h2>🌞 Afternoon</h2>
+        <div class="med-card left-border blue">
+          <div>
+            <h3>Atorvastatin</h3>
+            <p>20mg - 1 tablet<br>1:00 PM - After lunch</p>
+          </div>
+          <button class="btn green">Take Now</button>
+        </div>
+        <div class="med-card left-border orange">
+          <div>
+            <h3>Ibuprofen (As Needed)</h3>
+            <p>200mg - 1-2 tablets<br>For pain relief</p>
+          </div>
+          <button class="btn orange">Log Dose</button>
+        </div>
+      </div>
+
+      <div class="time-block evening">
+        <h2>🌙 Evening</h2>
+        <div class="med-card left-border red">
+          <div>
+            <h3>Metoprolol</h3>
+            <p>25mg - 1 tablet<br>5:00 PM - Before dinner</p>
+          </div>
+          <span class="status red-label">Missed</span>
+        </div>
+        <div class="med-card left-border blue">
+          <div>
+            <h3>Amlodipine</h3>
+            <p>5mg - 1 tablet<br>7:00 PM - With dinner</p>
+          </div>
+          <button class="btn green">Take Now</button>
+        </div>
+      </div>
+
+      <div class="time-block bedtime">
+        <h2>🌙 Bedtime</h2>
+        <div class="med-card left-border blue">
+          <div>
+            <h3>Simvastatin</h3>
+            <p>20mg - 1 tablet<br>9:00 PM - Before bed</p>
+          </div>
+          <button class="btn green">Take Now</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="refill">
+      <h2>Refill Reminders</h2>
+      <div class="refill-card yellow">
+        <div>
+          <strong>Lisinopril - 5 days remaining</strong>
+          <p>Last refill: May 15, 2023</p>
+        </div>
+        <button class="btn orange">Refill Now</button>
+      </div>
+      <div class="refill-card red">
+        <div>
+          <strong>Metformin - 2 days remaining</strong>
+          <p>Last refill: May 5, 2023</p>
+        </div>
+        <button class="btn red">Refill Now</button>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 MediTrack - Your Daily Medicine Tracker</p>
+    <div class="footer-links">
+      <a href="#">Help</a>
+      <a href="#">Privacy Policy</a>
+      <a href="#">Contact Support</a>
+    </div>
+  </footer>
+</body>
+</html>
