@@ -17,7 +17,7 @@
     <div class="date-block">
       
       <div class="date-title">
-        <h1>Today, Sunday, July 6</h1>
+        <h1 id="current-date-title">Today, Sunday, July 6</h1>
         <p>Your Medicines</p>
       </div>
       
@@ -100,4 +100,17 @@
     </div>
   </footer>
 </body>
+<script>
+  // Set current date and day in the header
+  function updateDateTitle() {
+    const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+    const now = new Date();
+    const day = days[now.getDay()];
+    const month = now.toLocaleString('default', { month: 'long' });
+    const dateStr = `Today, ${day}, ${month} ${now.getDate()}`;
+    const el = document.getElementById('current-date-title');
+    if (el) el.textContent = dateStr;
+  }
+  updateDateTitle();
+</script>
 </html>
