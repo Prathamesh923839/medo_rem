@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>MediTrack</title>
   <link rel="stylesheet" href="style.css" />
+  <script src="../reminder.js"></script>
+  <script src="daily_schedule.js"></script>
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
 
 </head>
@@ -12,12 +14,12 @@
   <header class="topbar">
     <div class="logo">🧪 MediTrack</div>
     <div class="date-block">
-      <button class="nav-btn">← Previous Day</button>
+      
       <div class="date-title">
-        <h1>Today, Sunday, July 6</h1>
+        <h1 id="current-date-title">Today, Sunday, July 6</h1>
         <p>Your Medicine Schedule</p>
       </div>
-      <button class="nav-btn">Next Day →</button>
+      
     </div>
   </header>
 
@@ -125,4 +127,17 @@
     </div>
   </footer>
 </body>
+<script>
+  // Set current date and day in the header
+  function updateDateTitle() {
+    const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+    const now = new Date();
+    const day = days[now.getDay()];
+    const month = now.toLocaleString('default', { month: 'long' });
+    const dateStr = `Today, ${day}, ${month} ${now.getDate()}`;
+    const el = document.getElementById('current-date-title');
+    if (el) el.textContent = dateStr;
+  }
+  updateDateTitle();
+</script>
 </html>

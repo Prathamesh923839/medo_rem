@@ -12,12 +12,12 @@
   <header class="topbar">
     <div class="logo">🧪 MediTrack</div>
     <div class="date-block">
-      <button class="nav-btn">← Previous Day</button>
+      
       <div class="date-title">
         <h1>Today, Sunday, July 6</h1>
         <p>Your Medicines</p>
       </div>
-      <button class="nav-btn">Next Day →</button>
+      
     </div>
   </header>
 
@@ -38,7 +38,7 @@
             <!-- Dynamic medicine fields will be inserted here -->
           </div>
           <button type="button" onclick="addMedicineField()" class="btn green" style="margin-bottom:1rem;">Add Medicine</button>
-          <button type="submit" class="btn blue">Save Changes</button>
+          <button type="submit" class="btn green">Save Changes</button>
         </form>
       </div>
       
@@ -100,8 +100,18 @@
       // Here you would typically send the updated medicines to your backend
     };
 
+
     // Initial render
     renderMedicines();
+  </script>
+  <script src="../reminder.js"></script>
+  <script src="update.js"></script>
+  <script>
+    window.addEventListener('DOMContentLoaded', function() {
+      if (typeof medicines !== 'undefined' && typeof checkMedicineReminders === 'function') {
+        checkMedicineReminders(medicines);
+      }
+    });
   </script>
 
   <footer>
