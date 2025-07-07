@@ -31,62 +31,78 @@
 
   <main class="main-content">
     <section class="schedule-grid">
-      <div class="time-block ">
-        <h2>YOUR Medicines</h2>
-        <div class="med-card left-border green">
-          <div>
-            <h3>Lisinopril</h3>
-            <p>10mg - 1 tablet<br>8:00 AM - With breakfast</p>
+      <div class="time-block">
+        <h2>Update Medicines</h2>
+        <form id="medicine-form">
+          <div id="medicines-list">
+            <!-- Dynamic medicine fields will be inserted here -->
           </div>
-      
-        </div>
-
-        <div class="med-card left-border blue">
-          <div>
-            <h3>Metformin</h3>
-            <p>500mg - 1 tablet<br>9:30 AM - With breakfast</p>
-          </div>
-    
-        </div>
-
-        <div class="med-card left-border blue">
-          <div>
-            <h3>Atorvastatin</h3>
-            <p>20mg - 1 tablet<br>1:00 PM - After lunch</p>
-          </div>
-          
-        </div>
-        <div class="med-card left-border orange">
-          <div>
-            <h3>Ibuprofen (As Needed)</h3>
-            <p>200mg - 1-2 tablets<br>For pain relief</p>
-          </div>
-        </div>
-        <div class="med-card left-border red">
-          <div>
-            <h3>Metoprolol</h3>
-            <p>25mg - 1 tablet<br>5:00 PM - Before dinner</p>
-          </div>
-          
-        </div>
-        <div class="med-card left-border blue">
-          <div>
-            <h3>Amlodipine</h3>
-            <p>5mg - 1 tablet<br>7:00 PM - With dinner</p>
-          </div>
-        </div>
-        
-        <div class="med-card left-border blue">
-          <div>
-            <h3>Simvastatin</h3>
-            <p>20mg - 1 tablet<br>9:00 PM - Before bed</p>
-          </div>
-          
-        </div>
-        
+          <button type="button" onclick="addMedicineField()" class="btn green" style="margin-bottom:1rem;">Add Medicine</button>
+          <button type="submit" class="btn blue">Save Changes</button>
+        </form>
       </div>
       
+
   </main>
+  <script>
+    // Example initial medicines (could be loaded from backend)
+    let medicines = [
+      { name: 'Lisinopril', dose: '10mg - 1 tablet', time: '8:00 AM', note: 'With breakfast' },
+      { name: 'Metformin', dose: '500mg - 1 tablet', time: '9:30 AM', note: 'With breakfast' },
+      { name: 'Atorvastatin', dose: '20mg - 1 tablet', time: '1:00 PM', note: 'After lunch' },
+      { name: 'Ibuprofen', dose: '200mg - 1-2 tablets', time: '', note: 'For pain relief' },
+      { name: 'Metoprolol', dose: '25mg - 1 tablet', time: '5:00 PM', note: 'Before dinner' },
+      { name: 'Amlodipine', dose: '5mg - 1 tablet', time: '7:00 PM', note: 'With dinner' },
+      { name: 'Simvastatin', dose: '20mg - 1 tablet', time: '9:00 PM', note: 'Before bed' }
+    ];
+
+    function renderMedicines() {
+      const list = document.getElementById('medicines-list');
+      list.innerHTML = '';
+      medicines.forEach((med, idx) => {
+        const medDiv = document.createElement('div');
+        medDiv.className = 'med-card left-border';
+        medDiv.style.marginBottom = '1rem';
+        medDiv.innerHTML = `
+          <input type="text" name="name" placeholder="Medicine Name" value="${med.name}" required style="margin-bottom:0.5rem;width:100%;" />
+          <input type="text" name="dose" placeholder="Dose (e.g. 10mg - 1 tablet)" value="${med.dose}" required style="margin-bottom:0.5rem;width:100%;" />
+          <input type="text" name="time" placeholder="Time (e.g. 8:00 AM)" value="${med.time}" style="margin-bottom:0.5rem;width:100%;" />
+          <input type="text" name="note" placeholder="Note (e.g. With breakfast)" value="${med.note}" style="margin-bottom:0.5rem;width:100%;" />
+          <button type="button" class="btn red" onclick="removeMedicineField(${idx})">Remove</button>
+        `;
+        list.appendChild(medDiv);
+      });
+    }
+
+    function addMedicineField() {
+      medicines.push({ name: '', dose: '', time: '', note: '' });
+      renderMedicines();
+    }
+
+    function removeMedicineField(idx) {
+      medicines.splice(idx, 1);
+      renderMedicines();
+    }
+
+    document.getElementById('medicine-form').onsubmit = function(e) {
+      e.preventDefault();
+      const fields = document.querySelectorAll('#medicines-list > .med-card');
+      medicines = Array.from(fields).map(div => {
+        const inputs = div.querySelectorAll('input');
+        return {
+          name: inputs[0].value,
+          dose: inputs[1].value,
+          time: inputs[2].value,
+          note: inputs[3].value
+        };
+      });
+      alert('Medicines updated!');
+      // Here you would typically send the updated medicines to your backend
+    };
+
+    // Initial render
+    renderMedicines();
+  </script>
 
   <footer>
     <p>© 2025 MediTrack - Your Daily Medicine Tracker</p>
