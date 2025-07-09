@@ -1,1 +1,1 @@
-# project detail
+# project details
