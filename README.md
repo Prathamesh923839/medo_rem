@@ -1,1 +1,1 @@
-# project details
+# medo_rem project detail
